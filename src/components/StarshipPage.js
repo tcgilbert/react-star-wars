@@ -1,17 +1,13 @@
-import Nav from './Nav';
-import StarshipInfo from './StarshipInfo';
+import StarshipLink from './StarshipLink';
 
 function StarshipPage(props) {
 
-  console.log(props);
-
   const starships = props.starships.map((ship, index) => {
-    return <li key={index}>{ship.name}</li>
+    return <StarshipLink key={index} shipId={index} name={ship.name} />
   })
 
   return (
     <div>
-      <Nav />
       <ul>
         {starships}
       </ul>
