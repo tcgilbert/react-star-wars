@@ -1,11 +1,20 @@
 import Nav from './Nav';
-
+import StarshipInfo from './StarshipInfo';
 
 function StarshipPage(props) {
+
+  console.log(props);
+
+  const starships = props.starships.map((ship, index) => {
+    return <li key={index}>{ship.name}</li>
+  })
+
   return (
     <div>
       <Nav />
-      <h1>Starships go here!</h1>
+      <ul>
+        {starships}
+      </ul>
     </div>
   )
 }
